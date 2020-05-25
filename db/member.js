@@ -10,8 +10,8 @@ module.exports = {
   create: (data) => {
     return knex("member").insert(data).returning("*");
   },
-  update: (data) => {
-    return knex("member").update(data);
+  update: (id, data) => {
+    return knex("member").where("id", id).update(data);
   },
   delete: (id) => {
     return knex("member").where("id", id).del();

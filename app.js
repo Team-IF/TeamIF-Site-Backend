@@ -3,12 +3,7 @@ const app = express();
 
 const https = require("https");
 
-const { users } = require("./config");
-const { getCredentials } = require("./credentials");
-
-const basicAuth = require("express-basic-auth");
-
-app.use(basicAuth({ users: users, challenge: true }));
+const { getCredentials } = require("./util/credentials");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
