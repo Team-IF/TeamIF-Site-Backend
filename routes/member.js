@@ -14,4 +14,22 @@ router.get("/:id", (req, res) => {
   });
 });
 
+router.post("/", (req, res) => {
+  member.create(req.body).then((result) => {
+    res.json(result);
+  });
+});
+
+router.patch("/:id", (req, res) => {
+  member.update(req.body).then((result) => {
+    res.json("{}");
+  });
+});
+
+router.delete("/:id", (req, res) => {
+  member.delete(req.params.id).then((result) => {
+    res.json("{}");
+  });
+});
+
 module.exports = router;
