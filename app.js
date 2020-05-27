@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/member", require("./routes/member"));
+app.use("/mail", require("./routes/sendmail"));
 
 if (process.env.NODE_ENV === "production") {
   const credentials = getCredentials();
