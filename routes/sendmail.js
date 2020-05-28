@@ -46,12 +46,10 @@ router.post(
         to: body.to,
         subject: body.subject,
         template: "invitation",
-        "h:X-Mailgun-Variables": {
-          title: body.title,
-          year: body.year,
-          content: body.content,
-          discord: body.discord,
-        },
+        'v:title': body.title,
+        'v:year': body.year,
+        'v:content': body.content,
+        'v:discord': body.discord,
       },
       (error, body) => {
         console.log(error);
