@@ -47,7 +47,7 @@ router.post(
         subject: body.subject,
         template: "invitation",
         'v:title': body.title,
-        'v:year': body.year,
+        'v:year': new Date().getFullYear(),
         'v:content': body.content,
         'v:discord': body.discord,
       },
